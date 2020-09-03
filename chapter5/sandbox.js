@@ -1,7 +1,7 @@
 // Object literals
 
 let user = {
-    name: "Wichan",
+    name: "Wichan Sangwondee",
     age: 30,
     email: 'sangwondee@gmail.com',
     location: 'thailand',
@@ -38,7 +38,7 @@ let user = {
 user.logIn();
 user.logOut();
 
-const name = 'wichan';
+const name = 'wichan sangwondee';
 
 name.toUpperCase();
 console.log(name);
