@@ -19,7 +19,7 @@ let user = {
         console.log('this is logBlogs');
     }
 }
-//
+// this is test git
 
 // dot notation คือการเข้าถึง object โดยการใช้ dot
 // console.log(user);
