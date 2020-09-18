@@ -1,16 +1,53 @@
+// symbool ->used with objects
+
+// symbool แบ่งออกเป็น 2 ชนิด
+1. Primitive type
+2. Reference types
+
+// Primitive Type ประกอบด้วย
+// 1.1 numbers
+// 1.2 string
+// 1.3 Boolean
+// 1.4 null
+// 1.5 undefined
+// 1.6 symbols
+
+// Reference types ประกอบด้วย
+// 2.1 all types of objects
+// 2.1.1 object literals
+// 2.1.2 arrays
+// 2.1.3 functions
+// 2.1.4 dates
+// 2.1.5 all other objects
+
+// Stack & Heap
+
+Stack คือที่ ลักษณะคล้ายๆ memory (Ram) ที่จะเก็บค่าของตัวแปรที่ถูกสร้างไว้ในทุกๆ
+Heap คือ
+
+
+
+
+
+
+
+
+
+
+
 // Math object
 
 // คืทอการใช้งาน objects math ที่มีอยู่ใน javascripts
-console.log(Math);
-console.log(Math.PI + ' => this is pi value');
-console.log(Math.E);
+// console.log(Math);
+// console.log(Math.PI + ' => this is pi value');
+// console.log(Math.E);
 
-const area = 7.7;
+// const area = 7.7;
 
-console.log(Math.round(area)); // ปัดค่าขึ้นปัดค่าลง
-console.log(Math.floor(area)); // เอาค่าทศนิยม
-console.log(Math.ceil(area)); //  ปัดค่าขึ้น
-console.log(Math.trunc(area)); // ตัดค่่าเอาเฉพาะตัวเลข
+// console.log(Math.round(area)); // ปัดค่าขึ้นปัดค่าลง
+// console.log(Math.floor(area)); // เอาค่าทศนิยม
+// console.log(Math.ceil(area)); //  ปัดค่าขึ้น
+// console.log(Math.trunc(area)); // ตัดค่่าเอาเฉพาะตัวเลข
 
 // Object literals
 // const blogs = [
