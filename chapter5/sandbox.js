@@ -1,8 +1,8 @@
-// symbool ->used with objects
+// Symbool ->used with objects *** สำคัญมากกกก***
 
 // symbool แบ่งออกเป็น 2 ชนิด
-1. Primitive type
-2. Reference types
+// 1. Primitive type
+// 2. Reference types
 
 // Primitive Type ประกอบด้วย
 // 1.1 numbers
@@ -22,16 +22,33 @@
 
 // Stack & Heap
 
-Stack คือที่ ลักษณะคล้ายๆ memory (Ram) ที่จะเก็บค่าของตัวแปรที่ถูกสร้างไว้ในทุกๆ
-Heap คือ เป็นตัวเก็บข้อมูลแบบหนึ่งจะเก็บข้อมูลประเภทของ objects ซึ่ง จะเก็บข้อมูลจริงๆ แต่จะนำเอา pointer เข้าไปเก็บในตัว ของ stack อีกครั้งหนึ่ง
+// Stack คือที่ ลักษณะคล้ายๆ memory (Ram) ที่จะเก็บค่าของตัวแปรที่ถูกสร้างไว้ในทุกๆ
+// Heap คือ เป็นตัวเก็บข้อมูลแบบหนึ่งจะเก็บข้อมูลประเภทของ objects ซึ่ง จะเก็บข้อมูลจริงๆ แต่จะนำเอา pointer เข้าไปเก็บในตัว ของ stack อีกครั้งหนึ่ง
 
+// Primitive type
 
+let scoreOne = 50;
+let scoreTwo = scoreOne;
 
+console.log(`scoreOne : ${scoreOne} and scoreTwo : ${scoreTwo}`);
 
+scoreOne = 100;
 
+// ถ้าหากเรากำหนดค่าแบบ primitive type ค่าหนึ่งอีกค่าหนึ่งมันจะไม่เปลี่ยนตามเช่น ค่า scoreOne
+console.log(`scoreOne : ${scoreOne} and scoreTwo : ${scoreTwo}`);
 
+// Reference Value
+// ถ้าเราเปลี่ยนค่าใดค่าหนึ่งมันจะเปลี่ยนทั้งสองค่า
+// เพราะว่า reference type มันจะเก็บเฉพาะ pointer ไว้ใน stack (memory)
+// ไม่ว่าค่าตัวแปรตัวนั้นจะเปลี่ยนจากตัว 1 หรือ ตัวที่ 2
+const userOne = { name: 'ryu', age: 30 };
+const userTwo = userOne;
 
+console.log(userOne, userTwo);
 
+// userOne.name = 'sangwondee';
+userTwo.age = 40;
+console.log(userOne, userTwo);
 
 
 
