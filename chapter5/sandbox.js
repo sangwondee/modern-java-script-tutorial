@@ -51,7 +51,6 @@ userTwo.age = 40;
 console.log(userOne, userTwo);
 
 
-
 // Math object
 
 // คืทอการใช้งาน objects math ที่มีอยู่ใน javascripts
