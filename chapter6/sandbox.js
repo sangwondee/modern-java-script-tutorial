@@ -19,16 +19,17 @@
 // console.log(params);
 
 // Get an element by id
-const title = document.getElementById('page-title'); //ถ้าเป็น getElementById เราไม่จำเป็นต้องมี # เพื่อให้ได้ element
-// console.log(title);
+// const title = document.getElementById('page-title'); //ถ้าเป็น getElementById เราไม่จำเป็นต้องมี # เพื่อให้ได้ element
+// // console.log(title);
 
-// Get elements by their class name
-const errors = document.getElementsByClassName('error');
-// ค่าที่ได้ออกมาจะเป็น HTMLCollection เป็น arrays แต่เราไม่สามารถใช้ foreach loops กับมันได้.
-// console.log(errors[0]);
-// console.log(errors);
+// // Get elements by their class name
+// const errors = document.getElementsByClassName('error');
+// // ค่าที่ได้ออกมาจะเป็น HTMLCollection เป็น arrays แต่เราไม่สามารถใช้ foreach loops กับมันได้.
+// // console.log(errors[0]);
+// // console.log(errors);
 
-// Get elements by their tag name
-const paras = document.getElementsByTagName('p');
+// // Get elements by their tag name
+// const paras = document.getElementsByTagName('p');
 // จะหา <p> ทั้งหมดที่อยู่ในหน้านั้นแล้วทำการแสดงออกมา
 // console.log(paras);
+
