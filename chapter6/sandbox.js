@@ -66,15 +66,29 @@
 // Getting & Setting Attributes
 // getAttribute => เอาค่าจาก attribute เช่น tag a ได้ attribute เป็น href
 // setAttribute => กำหนดค่าให้ กับ attribute นั้น
-const link = document.querySelector('a');
-// console.log(link.getAttribute('href'));
+// const link = document.querySelector('a');
+// // console.log(link.getAttribute('href'));
 
- // parameter แรก ให้ใส่ class ที่เราต้องการเปลี่ยนตัวที่สอง ให้ใส่ตัวใหม่เข้าไป
-link.setAttribute('href', 'https://www.thenetninja.co.uk');
-link.innerText = 'The Net Ninja Website';
+//  // parameter แรก ให้ใส่ class ที่เราต้องการเปลี่ยนตัวที่สอง ให้ใส่ตัวใหม่เข้าไป
+// link.setAttribute('href', 'https://www.thenetninja.co.uk');
+// link.innerText = 'The Net Ninja Website';
 
-const mssg = document.querySelector('p');
+// const mssg = document.querySelector('p');
 
-console.log(mssg.getAttribute('class'));
-mssg.setAttribute('class', 'success'); // setAttribute เอาไว้ใช้เวลาใส่ if success or warning or danger.
-mssg.setAttribute('style', 'color: green;'); // แต่ถ้า ในตัวแปลนั้นไม่มี attribute จะถูกสร้างขึ้นมาใหม่
+// console.log(mssg.getAttribute('class'));
+// mssg.setAttribute('class', 'success'); // setAttribute เอาไว้ใช้เวลาใส่ if success or warning or danger.
+// mssg.setAttribute('style', 'color: green;'); // แต่ถ้า ในตัวแปลนั้นไม่มี attribute จะถูกสร้างขึ้นมาใหม่
+
+// Changing CSS Styles
+
+// เราสามารถกำหนด size หรือ รูปแบบ css ของ element ได้
+const title = document.querySelector('h1');
+
+console.log(title.style);
+// console.log(title.style.color);
+
+title.style.margin = '50px';
+title.style.color = 'crimson';
+title.style.fontSize = '60px';
+title.style.margin = ''; // สามารถกำหนดค่าออกเป็น null ได้
+
