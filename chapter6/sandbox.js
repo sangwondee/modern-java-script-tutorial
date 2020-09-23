@@ -33,3 +33,32 @@
 // จะหา <p> ทั้งหมดที่อยู่ในหน้านั้นแล้วทำการแสดงออกมา
 // console.log(paras);
 
+// เอาค่าใน text ต่างๆมาใช้งาน
+
+// innerText => ใช้ในการหาและเปลี่ยนแปลงค่าใน text ของ html ที่เราเลือก
+// innerHTML => ใช้หาค่าหรือเปลี่ยนแปลงค่าใน HTML
+// const para = document.querySelector('p');
+// console.log(para.innerText);
+
+// para.innerHTML = 'ninjas are awesome!';
+// console.log(para);
+
+// const paras = document.querySelectorAll('p');
+
+// paras.forEach((para) => { // Arrow function
+//     console.log(para.innerText);
+//     para.innerText += ' new text';  // += คือการเอาค่าเดิมมาเพิ่มกับค่าใหม่
+// });
+
+// let content = document.querySelector('.content');
+
+// console.log(content.innerHTML);
+// content.innerHTML += '<h2>This is a new h2</h2>'
+
+// const people = ['mario', 'luigi', 'yoshi'];
+
+// people.forEach((person) => {
+//     content.innerHTML += `<p>${person}</p>`; // เป็นการเพิ่มค่า value text เข้าไปใน values
+// });
+
+// console.log(content);
