@@ -81,14 +81,56 @@
 
 // Changing CSS Styles
 
-// เราสามารถกำหนด size หรือ รูปแบบ css ของ element ได้
-const title = document.querySelector('h1');
+// // เราสามารถกำหนด size หรือ รูปแบบ css ของ element ได้
+// const title = document.querySelector('h1');
 
-console.log(title.style);
-// console.log(title.style.color);
+// console.log(title.style);
+// // console.log(title.style.color);
 
-title.style.margin = '50px';
-title.style.color = 'crimson';
-title.style.fontSize = '60px';
-title.style.margin = ''; // สามารถกำหนดค่าออกเป็น null ได้
+// title.style.margin = '50px';
+// title.style.color = 'crimson';
+// title.style.fontSize = '60px';
+// title.style.margin = ''; // สามารถกำหนดค่าออกเป็น null ได้
+
+
+// Class List => list class ทั้งหมดออกมา
+// textContent => ใช้หาค่าในตัว tag นั้นๆ คล้ายๆ innerHTML
+
+// const content = document.querySelector('p');
+// console.log(content.classList); // list class ที่เป็น tag p ทั้งหมด
+// content.classList.add('error'); // เพิ่ม class เข้าไป สามารถใส่เป็น array ได้.
+// content.classList.remove('anothor'); // remove class anothor
+// content.classList.add('success'); // เพิ่ม class เข้าไป สามารถใส่เป็น array ได้.
+
+const paras = document.querySelectorAll('p');
+
+// Execise เขียนเอง
+// paras.forEach((p) => {
+//     // console.log(p);
+//     if (p.innerHTML.search('error') >= 0) {
+//         p.classList.add('error');
+//     }
+
+//     if (p.innerHTML.search('success') >= 0) {
+//         p.classList.add('success');
+//     }
+// });
+
+// เฉลย
+paras.forEach(p => {
+    // console.log(p.textContent.includes('error'));
+    if (p.textContent.includes('error')) {
+        p.classList.add('error');
+    };
+
+    if (p.textContent.includes('success')) {
+        p.classList.add('success');
+    }
+});
+
+// แถม
+const title = document.querySelector('.title');
+
+title.classList.toggle('test');
+// title.classList.toggle('test');
 
