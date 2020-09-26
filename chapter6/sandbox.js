@@ -102,7 +102,7 @@
 // content.classList.remove('anothor'); // remove class anothor
 // content.classList.add('success'); // เพิ่ม class เข้าไป สามารถใส่เป็น array ได้.
 
-const paras = document.querySelectorAll('p');
+// const paras = document.querySelectorAll('p');
 
 // Execise เขียนเอง
 // paras.forEach((p) => {
@@ -117,20 +117,45 @@ const paras = document.querySelectorAll('p');
 // });
 
 // เฉลย
-paras.forEach(p => {
-    // console.log(p.textContent.includes('error'));
-    if (p.textContent.includes('error')) {
-        p.classList.add('error');
-    };
+// paras.forEach(p => {
+//     // console.log(p.textContent.includes('error'));
+//     if (p.textContent.includes('error')) {
+//         p.classList.add('error');
+//     };
 
-    if (p.textContent.includes('success')) {
-        p.classList.add('success');
-    }
-});
+//     if (p.textContent.includes('success')) {
+//         p.classList.add('success');
+//     }
+// });
 
-// แถม
-const title = document.querySelector('.title');
+// // แถม
+// const title = document.querySelector('.title');
 
-title.classList.toggle('test');
 // title.classList.toggle('test');
+// title.classList.toggle('test');
+
+
+// Dom Parnets and Children & Siblings  เหมือนเป็นการหา node ที่สูงกว่าหรือต่ำกว่า ของ node ก่อนหน้านี้
+
+// const article = document.querySelector('article');
+
+// console.log(article.children); // จะแสดงผลออกมาในรูปของ HTMLCollections[]ซึ่งเราไม่สามารถนำมาเป็น foreach loop ได้
+
+// Array.from คือ การ Convert HTMLCollection ให้ไปอยู่ในรูปของ arrays เพื่อที่จะได้สามารถใช้ foreach ได้
+
+// Array.from(article.children).forEach(child => {
+//     child.classList.add('article-element');
+// });
+
+// const title = document.querySelector('h2');
+
+// console.log(title.parentElement); // .parentElement คือการค่า node ที่อยู่เหนือตัวมัน.
+// console.log(title.parentElement.parentElement); // ยิ่งถ้าเราใส่ตัว .parentElement เข้าไปมันก็จะไปหา node ที่อยู่ด้านบนเข้าไปเลื่อยๆ
+// console.log(title.nextElementSibling); // คือการหาตัว node ตัวถัดไป.
+// console.log(title.previousElementSibling); // คือการหาตัว ตัวก่อนหน้านี้. (แต่มันไม่มีค่่ามันจะ return null)
+
+// chaining
+// console.log(title.nextElementSibling.parentElement.children); เหมือนเขาแสดงให้ดูว่ามันจะออกมาเป็น HTMLCollections
+// แต่จริงๆแล้วมันไม่ได้ใช้ทำอะไรหรอ
+
 
