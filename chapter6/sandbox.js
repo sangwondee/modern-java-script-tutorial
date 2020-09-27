@@ -159,3 +159,23 @@
 // แต่จริงๆแล้วมันไม่ได้ใช้ทำอะไรหรอ
 
 
+// **** สำคัญมากกกกกกกกก  ****
+// Event Basics (Click events)
+
+// const button = document.querySelector('button');
+
+// addEventListenner (type, options);
+// button.addEventListener('click', event => {
+//     console.log('you click me');
+//     console.log(event);
+// });
+
+// const items = document.querySelectorAll('li');
+
+// items.forEach(item => {
+//     item.addEventListener('click', event => {
+//         // console.log(event);
+//         // console.log(event.target);
+//         event.target.style.textDecoration = 'line-through';
+//     });
+// });
