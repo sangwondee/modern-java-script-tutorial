@@ -174,8 +174,35 @@
 
 // items.forEach(item => {
 //     item.addEventListener('click', event => {
-//         // console.log(event);
-//         // console.log(event.target);
 //         event.target.style.textDecoration = 'line-through';
+//     });
+// });
+
+// Creating & Removing Element
+// คือการทำ click แล้วเพิ่มค่านั้นเข้าไปใน lists
+
+// const button = document.querySelector('button')
+// const ul = document.querySelector('ul')
+
+// button.addEventListener('click', () => {
+//     // method ที่ createElement ใน html method
+//     const li = document.createElement('li')
+//     // textContent เป็นการเอาค่าเข้าไปใส่ใน tag element นั้นๆ
+//     li.textContent = 'something new to do list'
+//     // prepend  คือการเพิ่ม Object เข้าไปใน node อันบนสุด ที่นี้คือการเพิ่ม li เข้าไปใน ul อันท้ายแรก (ใช้อันนัี้ล่ะ)
+//     ul.prepend(li)
+//     // append  คือการเพิ่ม Object เข้าไปใน node สุดท้ายในที่นี้คือการเพิ่ม li เข้าไปใน ul อันท้ายสุด
+//     // ul.append(li);
+
+//     // ul.innerHTML += '<li>somethin news</li>'
+// })
+
+// const ul = document.querySelector('ul')
+// .remove() // remove tag นั้นออกจากหน้า DOM
+// const items = document.querySelectorAll('li');
+
+// items.forEach(item => {
+//     item.addEventListener('click', event => {
+//         event.target.remove();
 //     });
 // });
