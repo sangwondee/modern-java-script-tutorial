@@ -210,27 +210,26 @@
 // Event Bubbling (and delegation)
 
 // เหมือนเป็น event ที่เรียงไปหาตัว parent เพื่อทำอะไรซักอย่างยัง งงๆ อยู่
+// const button = document.querySelector('button')
 
-const button = document.querySelector('button')
+// button.addEventListener('click', () => {
+//     // method ที่ createElement ใน html method
+//     const li = document.createElement('li')
+//     // textContent เป็นการเอาค่าเข้าไปใส่ใน tag element นั้นๆ
+//     li.textContent = 'something new to do list'
+//     // prepend  คือการเพิ่ม Object เข้าไปใน node อันบนสุด ที่นี้คือการเพิ่ม li เข้าไปใน ul อันท้ายแรก (ใช้อันนัี้ล่ะ)
+//     ul.prepend(li)
+//     // append  คือการเพิ่ม Object เข้าไปใน node สุดท้ายในที่นี้คือการเพิ่ม li เข้าไปใน ul อันท้ายสุด
+//     // ul.append(li);
+//     // ul.innerHTML += '<li>somethin news</li>'
+// });
 
-button.addEventListener('click', () => {
-    // method ที่ createElement ใน html method
-    const li = document.createElement('li')
-    // textContent เป็นการเอาค่าเข้าไปใส่ใน tag element นั้นๆ
-    li.textContent = 'something new to do list'
-    // prepend  คือการเพิ่ม Object เข้าไปใน node อันบนสุด ที่นี้คือการเพิ่ม li เข้าไปใน ul อันท้ายแรก (ใช้อันนัี้ล่ะ)
-    ul.prepend(li)
-    // append  คือการเพิ่ม Object เข้าไปใน node สุดท้ายในที่นี้คือการเพิ่ม li เข้าไปใน ul อันท้ายสุด
-    // ul.append(li);
-    // ul.innerHTML += '<li>somethin news</li>'
-});
+// const ul = document.querySelector('ul')
 
-const ul = document.querySelector('ul')
-
-ul.addEventListener('click', e => {
-    // console.log(e.target.tagName === 'LI');
-    // console.log(e.target);
-    if (e.target.tagName === 'LI') { // เป็นการเลือกเอา target ไหนทำแบบนี้เพื่อป้องกัน ไม่ให้ไปคลิกที่อื่นแล้วมันหายไป
-        e.target.remove()
-    }
-});
+// ul.addEventListener('click', e => {
+//     // console.log(e.target.tagName === 'LI');
+//     // console.log(e.target);
+//     if (e.target.tagName === 'LI') { // เป็นการเลือกเอา target ไหนทำแบบนี้เพื่อป้องกัน ไม่ให้ไปคลิกที่อื่นแล้วมันหายไป
+//         e.target.remove()
+//     }
+// });
