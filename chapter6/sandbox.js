@@ -235,21 +235,23 @@
 // });
 
 // More DOM Events
-const copy = document.querySelector('.copy-me')
-const box = document.querySelector('.box')
+// const copy = document.querySelector('.copy-me')
+// const box = document.querySelector('.box')
 
-copy.addEventListener('copy', () => {
-    console.log('OI! my content is copyright')
-});
+// copy.addEventListener('copy', () => {
+//     console.log('OI! my content is copyright')
+// });
 
-// หาค่าที่อยู่ของ mouse ในอยู่ในกพื้นที่กล่องนั้น
-box.addEventListener('mousemove', e => {
-    box.textContent = `x pos - ${e.offsetX} y pos - ${e.offsetY}`;
-    // console.log(e);
-});
+// // หาค่าที่อยู่ของ mouse ในอยู่ในกพื้นที่กล่องนั้น
+// box.addEventListener('mousemove', e => {
+//     box.textContent = `x pos - ${e.offsetX} y pos - ${e.offsetY}`;
+//     // console.log(e);
+// });
 
-// เราสามารถจับ event ของ documnet ของ DOM ได้เลย
-// คือการ หาค่าที่อยู่ของ scroll wheel
-document.addEventListener('wheel', e => {
-    console.log(e.pageX, e.pageY);
-});
+// // เราสามารถจับ event ของ documnet ของ DOM ได้เลย
+// // คือการ หาค่าที่อยู่ของ scroll wheel
+// document.addEventListener('wheel', e => {
+//     console.log(e.pageX, e.pageY);
+// });
+
+
