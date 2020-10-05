@@ -1,17 +1,25 @@
+// Testing RegEx
 
-const form = document.querySelector('.signup-form')
+const username = 'shaung';
+const pattern = /^[a-z]{6,}$/;
 
-// ถ้าหากจะอ้างขึ้นถึง form ให้ใส่เครื่องหมาย # สำคัญมาก
-// const username = document.querySelector('#username');
+// let result = pattern.test(username);
+// .test() เหมือนเป็นการตรวจค่าต่างๆ ว่ามีค่าอยู่ใน pattern นั้นๆ หรือไม่ จะ return ค่าออกมาเป็น true and false
 
-// dot notation = การเข้าถึงข้อมูล
-form.addEventListener('submit', e => {
+// if (result) {
+//     console.log('regex test passed :)');
+// } else {
+//     console.log('regex test fail :(');
+// }
 
-    e.preventDefault(); // ใช้ในการหยุด event ทุกอย่างแล้วมาทำ event ด้านล่างนี้
+let result = username.search(pattern);
 
-    // เราสามารถเข้าถึง form attribute ใน form ได้ โดยการใช้ dotnotation
-    console.log(form.username.value);
-    // username.value()
+// ส่วนใหญ่ใช้ตัวนี้กัน
+// .search เป็นการเข้าไปค้นหาค่าต่างๆ ตัวแปล string ที่ใส่เข้าไป
+// จะ return ออกมาเป็น 0 เมื่อเจอ และ return ค่าออกมาเป็น 1 เมื่อไม่เจอ
 
-    // console.log(form.username.value);
-});
+if (result >= 0) {
+    console.log('regex test passed :)');
+} else {
+    console.log('regex test fail :(');
+}
