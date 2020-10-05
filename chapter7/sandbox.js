@@ -1,25 +1,17 @@
-// Testing RegEx
+//Basic Form validattion
 
-const username = 'shaung';
-const pattern = /^[a-z]{6,}$/;
+const form = document.querySelector('.signup-form');
+const feedback = document.querySelector('.feedback')
 
-// let result = pattern.test(username);
-// .test() เหมือนเป็นการตรวจค่าต่างๆ ว่ามีค่าอยู่ใน pattern นั้นๆ หรือไม่ จะ return ค่าออกมาเป็น true and false
+form.addEventListener('submit', event => {
+    event.preventDefault();
 
-// if (result) {
-//     console.log('regex test passed :)');
-// } else {
-//     console.log('regex test fail :(');
-// }
+    const username = form.username.value;
+    const usernamePattern = /^[a-zA-z]{6,12}$/;
 
-let result = username.search(pattern);
-
-// ส่วนใหญ่ใช้ตัวนี้กัน
-// .search เป็นการเข้าไปค้นหาค่าต่างๆ ตัวแปล string ที่ใส่เข้าไป
-// จะ return ออกมาเป็น 0 เมื่อเจอ และ return ค่าออกมาเป็น 1 เมื่อไม่เจอ
-
-if (result >= 0) {
-    console.log('regex test passed :)');
-} else {
-    console.log('regex test fail :(');
-}
+    if (usernamePattern.test(username)) {
+        feedback.textContent = 'that username is valid !';
+    } else {
+        feedback.textContent = 'username must contain letters only & be between 6 to 12';
+    }
+});
