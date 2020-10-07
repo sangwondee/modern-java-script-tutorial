@@ -21,17 +21,11 @@ form.addEventListener('submit', e => {
         scrollTo(0,0);
         // result.querySelector('span').textContent = `${score}%`;
         result.classList.remove('d-none');
-
         // เป็นการ set Animations เวลาตัวเลขค่อยเพิ่มขึ้นมา.
         let output = 0;
         const timer = setInterval(() => {
             result.querySelector('span').textContent = `${output}%`;
-
-            if (output === score) {
-                clearInterval(timer);
-            } else {
-                output++;
-            }
+            output === score ? clearInterval(timer) : output++;
         }, 10);
     }
 })
