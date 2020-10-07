@@ -19,7 +19,19 @@ form.addEventListener('submit', e => {
     if (score > 0) {
         // window object ?
         scrollTo(0,0);
-        result.querySelector('span').textContent = `${score}%`;
+        // result.querySelector('span').textContent = `${score}%`;
         result.classList.remove('d-none');
+
+        // เป็นการ set Animations เวลาตัวเลขค่อยเพิ่มขึ้นมา.
+        let output = 0;
+        const timer = setInterval(() => {
+            result.querySelector('span').textContent = `${output}%`;
+
+            if (output === score) {
+                clearInterval(timer);
+            } else {
+                output++;
+            }
+        }, 10);
     }
 })
