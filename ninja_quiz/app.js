@@ -17,6 +17,8 @@ form.addEventListener('submit', e => {
     });
 
     if (score > 0) {
+        // window object ?
+        scrollTo(0,0);
         result.querySelector('span').textContent = `${score}%`;
         result.classList.remove('d-none');
     }
