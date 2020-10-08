@@ -103,13 +103,13 @@
 // Sort Method
 
 // example 1
-const names = ['mario', 'shaun', 'chun-li', 'yoshi', 'luigi'];
-names.sort();
-console.log(names);
+// const names = ['mario', 'shaun', 'chun-li', 'yoshi', 'luigi'];
+// names.sort();
+// console.log(names);
 
 // example 2
 
-const scores = [10, 50, 20, 5, 35, 70, 45];
+// const scores = [10, 50, 20, 5, 35, 70, 45];
 
 // ***สำคัญมาก เราไม่สามารถ sort แบบนี้ได้เพราะมันใช้สำหรับ alphabetically
 // ให้เราใส่ function callback เข้าไปเท่านั้น
@@ -123,25 +123,50 @@ const scores = [10, 50, 20, 5, 35, 70, 45];
 // });
 
 // shorthand version
-scores.sort((a,b) => b - a);
-console.log(scores);
+// scores.sort((a,b) => b - a);
+// console.log(scores);
 
 // example 3
-const players = [
-    { name: 'mario', score : 20 },
-    { name: 'luigi', score : 10 },
-    { name: 'chun-li', score : 50 },
-    { name: 'yoshi', score : 30 },
-    { name: 'shaun', score : 70 },
-]
+// const players = [
+//     { name: 'mario', score : 20 },
+//     { name: 'luigi', score : 10 },
+//     { name: 'chun-li', score : 50 },
+//     { name: 'yoshi', score : 30 },
+//     { name: 'shaun', score : 70 },
+// ]
 
 // players.sort((a,b) => {
 //     return b.score - a.score;
 //     // console.log(a, b);
 // });
 
-players.sort((a,b) => b.score - a.score);
-console.log(players);
+// players.sort((a,b) => b.score - a.score);
+// console.log(players);
 
 
+// Chaining Array Methods
+// คือการใช้ array 2 method เข้าด้วยกัน ทำให้เขียนได้สั้นลง
 
+const products = [
+    { name: 'gold start', price: 30 },
+    { name: 'green shell', price: 10 },
+    { name: 'red shell', price: 40 },
+    { name: 'banana skin', price: 5 },
+    { name: 'mushroom', price: 50 }
+]
+
+// จากเดิมเราต้องเขียนแบบนี้
+// const filtered = products.filter(product => product.price > 20);
+
+// const promo = filtered.map((product) => {
+//     return `name ${product.name} promotion price ${product.price / 2} bound`;
+// });
+
+
+// อันนีดีมากเอาไว้ refactor
+// เรามาใช้แบบนี้แทน
+const promo = products
+    .filter(product => product.price > 20)
+    .map(product => `name ${product.name} promotion price ${product.price / 2} bound`);
+
+console.log(promo);
