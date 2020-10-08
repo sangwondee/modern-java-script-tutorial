@@ -68,24 +68,39 @@
 
 // console.log(result);
 
-const scores = [
-    { player : 'mario', score : 50 },
-    { player : 'yoshi', score : 30 },
-    { player : 'mario', score : 70 },
-    { player : 'crystal', score : 60 }
-]
+// const scores = [
+//     { player : 'mario', score : 50 },
+//     { player : 'yoshi', score : 30 },
+//     { player : 'mario', score : 70 },
+//     { player : 'crystal', score : 60 }
+// ]
 
-const marioTotal = scores.reduce((acc, curr) => {
-    // acc(accumulator) = ตัวสะสม
-    // curr(currentValue) = ค่าปัจจุปัน
-    if (curr.player === 'mario') {
-        acc += curr.score;
-    }
+// const marioTotal = scores.reduce((acc, curr) => {
+//     // acc(accumulator) = ตัวสะสม
+//     // curr(currentValue) = ค่าปัจจุปัน
+//     if (curr.player === 'mario') {
+//         acc += curr.score;
+//     }
 
-    return acc;
-}, 0)
+//     return acc;
+// }, 0)
+// console.log(marioTotal);
 
-console.log(marioTotal);
+
+// Find method
+// Find method จะเข้าไปวนหาใน array ถ้าหากเจอ จะ return ค่าออกมาเป็น True กับ False
+// ซึ่งเมื่อเจอค่าที่เป็น true จะหยุดทำงานทันที
+const scores = [10, 5, 0, 40, 30, 10, 90, 70];
+// const firstHighScore = scores.find(score => {
+//     return score > 50;
+// });
+
+// Shorthand version
+const firstHighScore = scores.find(score => score > 50);
+// console.log(firstHighScore);
+
+
+
 
 
 
