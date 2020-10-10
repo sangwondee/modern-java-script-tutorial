@@ -24,3 +24,12 @@ const genrateTemplate = (todo) => {
 
     list.innerHTML += html;
 };
+
+// delete todos
+list.addEventListener('click', e => {
+    console.log(e.target.classList);
+    // .contains เป็นเหมือน เลือกว่าจะเอา contains('รับค่าเป็น') class ไหน
+    if (e.target.classList.contains('delete')) {
+        e.target.parentElement.remove();
+    }
+});
