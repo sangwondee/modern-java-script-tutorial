@@ -1,5 +1,6 @@
 const addForm = document.querySelector('.add');
 const list = document.querySelector('.todos');
+const search = document.querySelector('.search input');
 
 addForm.addEventListener('submit', e => {
     e.preventDefault();
@@ -10,8 +11,6 @@ addForm.addEventListener('submit', e => {
         genrateTemplate(todo);
         addForm.reset();
     }
-
-
 })
 
 const genrateTemplate = (todo) => {
@@ -33,3 +32,25 @@ list.addEventListener('click', e => {
         e.target.parentElement.remove();
     }
 });
+
+
+// มีความ งง อยู่
+const filterTodos = (term) => {
+    // console.log(Array.from(list.children));
+    Array.from(list.children)
+        .filter((todo) => !todo.textContent.toLowerCase().includes(term))
+        .forEach((todo) => todo.classList.add('filtered'))
+
+    Array.from(list.children)
+        .filter((todo) => todo.textContent.toLowerCase().includes(term))
+        .forEach((todo) => todo.classList.remove('filtered'))
+}
+
+// Search มีความงงอยู่อาจจะต้องดูและทำความเข้าใจอีกรอบ
+
+search.addEventListener('keyup', () => {
+    const term = search.value.trim().toLowerCase();
+    filterTodos(term);
+    // console.log(term);
+});
+
