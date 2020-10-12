@@ -24,25 +24,43 @@
 
 // timestamps
 // เราสามารถ ใส่ค่าวันที่ที่เป็นตัวอักษรเข้าไปได้เลย
-const before = new Date('February 1 2019 7:30:59');
-const now = new Date;
+// const before = new Date('February 1 2019 7:30:59');
+// const now = new Date;
 
-console.log(now.getTime(), before.getTime());
+// console.log(now.getTime(), before.getTime());
 
-// หาค่า เวลาที่ต่างกันจาก timestamp
-const diff = now.getTime() - before.getTime();
-console.log(diff);
+// // หาค่า เวลาที่ต่างกันจาก timestamp
+// const diff = now.getTime() - before.getTime();
+// console.log(diff);
 
-const mins = Math.round(diff / 1000 / 60); // เพราะ 1000 ms เท่ากับ 1 นาที
-const hours = Math.round(mins / 60);
-const days = Math.round(hours / 24);
+// const mins = Math.round(diff / 1000 / 60); // เพราะ 1000 ms เท่ากับ 1 นาที
+// const hours = Math.round(mins / 60);
+// const days = Math.round(hours / 24);
 
-console.log(mins, hours, days);
-console.log(`the blog was written ${days} ago`);
+// console.log(mins, hours, days);
+// console.log(`the blog was written ${days} ago`);
 
-// converting timestamps into date objects
-const timestamp = 1675938474990;
+// // converting timestamps into date objects
+// const timestamp = 1675938474990;
+// console.log(new Date(timestamp));
 
-console.log(new Date(timestamp));
 
+// Building a Digital Clock Hell Yeah !!!
+const clock = document.querySelector('.clock');
 
+const tick = () => {
+    const now = new Date();
+    const hours = now.getHours();
+    const minutes = ("0" + now.getMinutes()).substr(-2); // ใส่ 0 ด้านหน้่ากรณีที่เวลาไม่่ถึง 10 นาที
+    const seconds = ("0" + now.getSeconds()).substr(-2);
+
+    const html = `
+        <span>${hours}</span> :
+        <span>${minutes}</span> :
+        <span>${seconds}</span>
+    `;
+
+    clock.innerHTML = html;
+}
+
+setInterval(tick, 1000); // แสดงเวลาทุกๆ วินาที
