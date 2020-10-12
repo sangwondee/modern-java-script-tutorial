@@ -50,9 +50,7 @@ const filterTodos = (term) => {
 }
 
 // Search มีความงงอยู่อาจจะต้องดูและทำความเข้าใจอีกรอบ
-
 search.addEventListener('keyup', () => {
     const term = search.value.trim().toLowerCase();
     filterTodos(term);
 });
-
