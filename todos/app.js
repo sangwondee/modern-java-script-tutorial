@@ -33,10 +33,13 @@ list.addEventListener('click', e => {
     }
 });
 
-
 // มีความ งง อยู่
 const filterTodos = (term) => {
-    // console.log(Array.from(list.children));
+    // list ตัวนี้จะออกมาเป็น HTMLCollection เรามาใช้ children ต่อเพราะเราจะเอาค่าใน list ของมัน
+    // Array.from คือการแปลงค่า HTMLCollection เป็น array เพื่อเราจะได้เรียกใช้ function ต่างๆ ได้.
+
+    // แปลง HTMLCollection to array แล้ว filter ตัว todo โดยที่ไม่เอาตัว todo list ที่รับค่าเข้ามาแล้วค่อยไปเพิ่ม class filtered
+    // ซึ่ง class filtered จะแสดง display none;
     Array.from(list.children)
         .filter((todo) => !todo.textContent.toLowerCase().includes(term))
         .forEach((todo) => todo.classList.add('filtered'))
@@ -51,6 +54,5 @@ const filterTodos = (term) => {
 search.addEventListener('keyup', () => {
     const term = search.value.trim().toLowerCase();
     filterTodos(term);
-    // console.log(term);
 });
 
