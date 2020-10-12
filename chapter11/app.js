@@ -46,21 +46,40 @@
 
 
 // Building a Digital Clock Hell Yeah !!!
-const clock = document.querySelector('.clock');
+// const clock = document.querySelector('.clock');
 
-const tick = () => {
-    const now = new Date();
-    const hours = now.getHours();
-    const minutes = ("0" + now.getMinutes()).substr(-2); // ใส่ 0 ด้านหน้่ากรณีที่เวลาไม่่ถึง 10 นาที
-    const seconds = ("0" + now.getSeconds()).substr(-2);
+// const tick = () => {
+//     const now = new Date();
+//     const hours = now.getHours();
+//     const minutes = ("0" + now.getMinutes()).substr(-2); // ใส่ 0 ด้านหน้่ากรณีที่เวลาไม่่ถึง 10 นาที
+//     const seconds = ("0" + now.getSeconds()).substr(-2);
 
-    const html = `
-        <span>${hours}</span> :
-        <span>${minutes}</span> :
-        <span>${seconds}</span>
-    `;
+//     const html = `
+//         <span>${hours}</span> :
+//         <span>${minutes}</span> :
+//         <span>${seconds}</span>
+//     `;
 
-    clock.innerHTML = html;
-}
+//     clock.innerHTML = html;
+// }
 
-setInterval(tick, 1000); // แสดงเวลาทุกๆ วินาที
+// setInterval(tick, 1000); // แสดงเวลาทุกๆ วินาที
+
+
+// Date-fns Library คล้ายๆกับ (MomentJs) แต่จะเร็วกว่าเอาที่เราถนัดเอา
+const now = new Date();
+// console.log(dateFns.isToday(now));
+
+// formatting options
+console.log(dateFns.format(now, 'YYYY'));
+console.log(dateFns.format(now, 'MMM'));
+console.log(dateFns.format(now, 'dddd'));
+console.log(dateFns.format(now, 'Do'));
+console.log(dateFns.format(now, 'dddd Do MMMM YYYY'));
+
+// // comparing dates
+// const before = new Date('February 1 2019 12:00:00');
+// console.log(dateFns.distanceInWords(now, before, { addSuffix : true}));
+
+// Moment js
+// console.log(moment().format());
