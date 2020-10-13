@@ -24,7 +24,7 @@
 
 // Callback Functions
 // (Callback ตัวนี้เป็น function นะไม่ใช้ paramater และเพราะว่ามันเป็น function มันจึงรับ 2 ค่าและ return 2 ค่า)
-const getTodos = (callback) => { // ทำไมถึง รับค่ามาค่าเดียวทั้งที่ส่งมา 2 ค่า ??????
+const getTodos = (resource, callback) => {
     const request = new XMLHttpRequest();
     // เมื่อ statechange มีการเปลี่ยแปลงก็จะทำการดักจับ
     request.addEventListener('readystatechange', () => {
@@ -42,23 +42,42 @@ const getTodos = (callback) => { // ทำไมถึง รับค่าม�
         }
     });
     // ต้องการ 2 parameter เพื่อ 1. method 2. path(url)
-    request.open('GET', 'todos.json');
-    // request.open('GET', 'https://jsonplaceholder.typicode.com/todos/');
+    request.open('GET', resource);
     request.send();
+
+    // request.open('GET', 'todos.json');
+    // request.open('GET', 'https://jsonplaceholder.typicode.com/todos/');
 }
 
 // log ตรงนี้เราจะแสดงให้เห็นว่า asynchronous ทำงานยังไง
-console.log(1)
-console.log(2)
+// console.log(1)
+// console.log(2)
 
-// จะทำตรงนี้เพราะ เราจะสามารถเรียกใช้ fuction ซ้ำๆได้
-getTodos((error, data) => { // ทำไมถึงส่งไป 2 แต่รับค่าเดียว
+
+//  ตัวอย่าง Callback Hell
+getTodos('todos/luigi.json', (error, data) => {
     if (error) {
         console.log(error);
     } else {
         console.log(data);
+        getTodos('todos/mario.json', (error, data) => {
+            console.log(data);
+        });
+        getTodos('todos/shaun.json', (error, data) => {
+            console.log(data);
+        });
     }
-})
+});
 
-console.log(3)
-console.log(4)
+
+// // จะทำตรงนี้เพราะ เราจะสามารถเรียกใช้ fuction ซ้ำๆได้
+// getTodos((error, data) => { // ทำไมถึงส่งไป 2 แต่รับค่าเดียว
+//     if (error) {
+//         console.log(error);
+//     } else {
+//         console.log(data);
+//     }
+// })
+
+// console.log(3)
+// console.log(4)
