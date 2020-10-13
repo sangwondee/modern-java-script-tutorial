@@ -31,7 +31,10 @@ const getTodos = (callback) => { // ทำไมถึง รับค่าม�
         // readyState => เป็นตัวบอกสถานะ ของ XMLHttpRequest โดยตัวที่ 4 นั้น จะมีความหมายว่า ทำงานเสร็จสิ้นแล้ว
         // อ่านเพิ่มเติม https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/readyState
         if (request.readyState === 4 && request.status === 200) {
-            callback(undefined, request.responseText); // จะ return ค่าออกมา 2 ตัว
+            // console.log(JSON);
+            // JSON => Javascript Object Notation -> รูปแบบการ จัดเก็บข้อมูลของ JavaScript จัดเก็บในลักษณะ JSON Object
+            const data = JSON.parse(request.responseText);
+            callback(undefined, data); // จะ return ค่าออกมา 2 ตัว
             // console.log(request.responseText);
         } else if (request.readyState === 4) {
             callback('could not fetch the data', undefined) // จะ return ค่าออกมา 2 ตัว
@@ -39,14 +42,14 @@ const getTodos = (callback) => { // ทำไมถึง รับค่าม�
         }
     });
     // ต้องการ 2 parameter เพื่อ 1. method 2. path(url)
-    request.open('GET', 'https://jsonplaceholder.typicode.com/todos/');
+    request.open('GET', 'todos.json');
+    // request.open('GET', 'https://jsonplaceholder.typicode.com/todos/');
     request.send();
 }
 
 // log ตรงนี้เราจะแสดงให้เห็นว่า asynchronous ทำงานยังไง
 console.log(1)
 console.log(2)
-
 
 // จะทำตรงนี้เพราะ เราจะสามารถเรียกใช้ fuction ซ้ำๆได้
 getTodos((error, data) => { // ทำไมถึงส่งไป 2 แต่รับค่าเดียว
