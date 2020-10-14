@@ -93,25 +93,25 @@
 
 // ref -> https://konoesite.com/promise-%E0%B9%83%E0%B8%99-javascript-b93f09acdb66
 
-const getTodos = (resource) => {
-    return new Promise((resolve, reject) => {
+// const getTodos = (resource) => {
+//     return new Promise((resolve, reject) => {
 
-        const request = new XMLHttpRequest();
+//         const request = new XMLHttpRequest();
 
-        request.addEventListener('readystatechange', () => {
-            if (request.readyState === 4 && request.status === 200) {
-                const data = JSON.parse(request.responseText);
-                resolve(data);
+//         request.addEventListener('readystatechange', () => {
+//             if (request.readyState === 4 && request.status === 200) {
+//                 const data = JSON.parse(request.responseText);
+//                 resolve(data);
 
-            } else if (request.readyState === 4) {
-                reject('error getting resource');
-            }
-        });
-        // ต้องการ 2 parameter เพื่อ 1. method 2. path(url)
-        request.open('GET', resource);
-        request.send();
-    });
-}
+//             } else if (request.readyState === 4) {
+//                 reject('error getting resource');
+//             }
+//         });
+//         // ต้องการ 2 parameter เพื่อ 1. method 2. path(url)
+//         request.open('GET', resource);
+//         request.send();
+//     });
+// }
 
 // Promise example
 // const getSomething = () => {
@@ -132,14 +132,28 @@ const getTodos = (resource) => {
 
 // Chaining Promise
 // เรียก function getTodos โดยใช้ตัว Promise
-getTodos('todos/luigi.json').then(data => {
-    console.log('promise resolved:', data);
-    return getTodos('todos/mario.json');
+// getTodos('todos/luigi.json').then(data => {
+//     console.log('promise resolved:', data);
+//     return getTodos('todos/mario.json');
+// }).then(data => {
+//     console.log('promise resolved:', data);
+//     return getTodos('todos/shuan.json');
+// }).then(data => {
+//     console.log('promise resolved:', data);
+// }).catch(error => {
+//     console.log(error)
+// });
+
+
+// The Fetch API (ทำงานเหมือน Promise แต่เขียนให้สั้นลงกว่า)
+// ref => https://medium.com/@sirawit/%E0%B9%80%E0%B8%9B%E0%B8%A5%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%99%E0%B8%A1%E0%B8%B2%E0%B9%83%E0%B8%8A%E0%B9%89-fetch-api-%E0%B9%81%E0%B8%97%E0%B8%99-ajax-%E0%B9%80%E0%B8%9E%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%94%E0%B8%B6%E0%B8%87%E0%B8%84%E0%B9%88%E0%B8%B2%E0%B8%88%E0%B8%B2%E0%B8%81-rest-api-%E0%B8%81-e345189ae935#:~:text=JavaScript%20%E0%B9%80%E0%B8%A7%E0%B8%AD%E0%B8%A3%E0%B9%8C%E0%B8%8A%E0%B8%B1%E0%B8%99%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88%E0%B9%84%E0%B8%94%E0%B9%89%E0%B8%AA%E0%B8%A3%E0%B9%89%E0%B8%B2%E0%B8%87,fetch(url)&text=return%20response.json()%20%2F%2F%20%E0%B9%81%E0%B8%9B%E0%B8%A5%E0%B8%87%E0%B8%82%E0%B9%89%E0%B8%AD%E0%B8%A1%E0%B8%B9%E0%B8%A5%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%84%E0%B8%94%E0%B9%89%E0%B9%80%E0%B8%9B%E0%B9%87%E0%B8%99%20json
+// ref => https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
+
+fetch('todos/luigi.json').then(response => {
+    return response.json();
 }).then(data => {
-    console.log('promise resolved:', data);
-    return getTodos('todos/shuan.json');
-}).then(data => {
-    console.log('promise resolved:', data);
-}).catch(error => {
-    console.log(error)
-});
+    console.log(data)
+}).catch(err => {
+    console.log('rejected', err)
+})
+
