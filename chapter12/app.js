@@ -157,19 +157,28 @@
 //     console.log('rejected', err)
 // })
 
+
 //async & await อันนี้ดีทำให้เขียนได้สั้นลงและง่ายขึ้น
 
 // await => ใช้เพื่อบอกให้ JavaScript รอจนกว่าคำสั่งนั้นจะเสร็จ ถึงค่อยไปทำงานอันต่อไป
 // ถ้าหากเราจะใช้เราต้องทำ function นั้นให้เป็น Async สะก่อนแบบในตัวอย่าง
 // ซึ่งถ้าหากเป็นแบบนั้น ตัว function นั้นจะ return ออกมาเป็น promise เราก็จะสามารถใช้
 // .then และ .catch เพื่อจัดการได้เลยไม่ต้องเขียนแบบด้านบนอีก
+// ข้อเสียคือจะไม่ support ie version ต่ำๆ
 
-// ข้อเสียคือ จะไม่ support ie version ต่ำๆ
 const getTodos = async () => {
-    const response = await fetch('todos/luigi.json');
-    const data = response.json();
+    const response = await fetch('todos/luigis.json');
+
+    if (response.status !== 200) {
+        throw new Error('cannot fetch the data hell Yeah');
+    }
+
+    const data = await response.json();
 
     return data;
 }
 
-getTodos().then(data => console.log('resolved : ', data));
+getTodos()
+    .then(data => console.log('resolved : ', data))
+    .catch(err => console.log('rejected', err.message))
+
