@@ -113,13 +113,6 @@ const getTodos = (resource) => {
     });
 }
 
-// เรียก function getTodos โดยใช้ตัว Promise
-getTodos('todos/luigi.json').then(data => {
-    console.log('promise resolved:', data);
-}).catch(error => {
-    console.log(error)
-});
-
 // Promise example
 // const getSomething = () => {
 //     return new Promise((resolve, reject) => {
@@ -136,3 +129,17 @@ getTodos('todos/luigi.json').then(data => {
 //     console.log(error);
 // });
 
+
+// Chaining Promise
+// เรียก function getTodos โดยใช้ตัว Promise
+getTodos('todos/luigi.json').then(data => {
+    console.log('promise resolved:', data);
+    return getTodos('todos/mario.json');
+}).then(data => {
+    console.log('promise resolved:', data);
+    return getTodos('todos/shuan.json');
+}).then(data => {
+    console.log('promise resolved:', data);
+}).catch(error => {
+    console.log(error)
+});
