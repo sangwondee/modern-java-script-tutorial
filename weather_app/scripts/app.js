@@ -21,19 +21,14 @@ const updateUI = (data) => {
             <span>&deg;C</span>
         </div>
     `
-
-    // update the  icon images
+    // update the icon images
     let iconSrc = null;
     iconSrc = `img/icons/${weather.WeatherIcon}.svg`;
     icon.setAttribute('src', iconSrc);
 
-    // update the night/day
-    let timeSrc = null;
-    if (weather.IsDayTime) {
-        timeSrc = 'img/day.svg';
-    } else {
-        timeSrc = 'img/night.svg'
-    }
+    // update the night/day background
+    let timeSrc = weather.IsDayTime ? 'img/day.svg' : 'img/night.svg'; // ternary operator หรือ show hand if
+
     time.setAttribute('src', timeSrc);
 
     // remove the d-none class if present
