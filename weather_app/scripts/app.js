@@ -1,18 +1,32 @@
 const cityForm = document.querySelector('form')
+const card = document.querySelector('.card');
+const details = document.querySelector('.details');
+
+const updateUI = (data) => {
+    const cityDetail = data.cityDetail;
+    const weather = data.weather;
+
+    // update Detail template
+    details.innerHTML = `
+        <h5 class="my-3">${cityDetail.EnglishName}</h5>
+        <div class="my-3">${weather.WeatherText}</div>
+        <div class="display-4 my-4">
+            <span>${weather.Temperature.Metric.Value}</span>
+            <span>&deg;C</span>
+        </div>
+    `
+
+    // remove the d-none class if present
+    if (card.classList.contains('d-none')) {
+        card.classList.remove('d-none');
+    }
+}
 
 const updateCity = async (city) => {
     const cityDetail = await getCity(city)
     const weather = await getWether(cityDetail.Key);
 
-    // object Shorthand Notation
-    // ใช้ในกรณีที่ค่าของเรานั้น มีค่าหมือนกันตัวแปรโดยไม่ต้องไปทำเป็น proproties ใหม่
     return { cityDetail, weather }
-
-    // อันนี้ของเดิม
-    // return {
-    //     cityDetail: cityDetail,
-    //     weather: weather
-    // }
 }
 
 cityForm.addEventListener('submit', event => {
@@ -22,7 +36,7 @@ cityForm.addEventListener('submit', event => {
     cityForm.reset();
 
     // update the ui with new city
-    updateCity(city)
-        .then(data => console.log(data))
-        .catch(err => console.log(err));
+    updateCity(city).then(data => {
+        updateUI(data);
+    }).catch(err => console.log(err));
 });
