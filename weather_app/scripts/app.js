@@ -4,10 +4,15 @@ const updateCity = async (city) => {
     const cityDetail = await getCity(city)
     const weather = await getWether(cityDetail.Key);
 
-    return {
-        cityDetail: cityDetail,
-        weather: weather
-    }
+    // object Shorthand Notation
+    // ใช้ในกรณีที่ค่าของเรานั้น มีค่าหมือนกันตัวแปรโดยไม่ต้องไปทำเป็น proproties ใหม่
+    return { cityDetail, weather }
+
+    // อันนี้ของเดิม
+    // return {
+    //     cityDetail: cityDetail,
+    //     weather: weather
+    // }
 }
 
 cityForm.addEventListener('submit', event => {
