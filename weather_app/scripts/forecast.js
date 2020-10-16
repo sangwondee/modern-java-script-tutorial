@@ -1,1 +1,1 @@
-console.log('forecast');
+const key = '8QBgv45EP8t4NTYjRgvjvXj017SuX86A';
