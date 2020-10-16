@@ -1,8 +1,12 @@
 const cityForm = document.querySelector('form')
 const card = document.querySelector('.card');
 const details = document.querySelector('.details');
+const time = document.querySelector('img.time')
+const icon = document.querySelector('.icon img');
 
 const updateUI = (data) => {
+
+    console.log(data);
     // Destructuring Object
     // อ่านเพิ่มเติมจากอันนี้
     // => https://medium.com/@brightsongpat/%E0%B8%A1%E0%B8%B2%E0%B8%A3%E0%B8%B9%E0%B9%89%E0%B8%88%E0%B8%B1%E0%B8%81%E0%B8%81%E0%B8%B2%E0%B8%A3-destructuring-object%E0%B9%83%E0%B8%99-es6-%E0%B8%81%E0%B8%B1%E0%B8%99%E0%B9%80%E0%B8%97%E0%B8%AD%E0%B8%B0-470018a0f2bd
@@ -17,6 +21,20 @@ const updateUI = (data) => {
             <span>&deg;C</span>
         </div>
     `
+
+    // update the  icon images
+    let iconSrc = null;
+    iconSrc = `img/icons/${weather.WeatherIcon}.svg`;
+    icon.setAttribute('src', iconSrc);
+
+    // update the night/day
+    let timeSrc = null;
+    if (weather.IsDayTime) {
+        timeSrc = 'img/day.svg';
+    } else {
+        timeSrc = 'img/night.svg'
+    }
+    time.setAttribute('src', timeSrc);
 
     // remove the d-none class if present
     if (card.classList.contains('d-none')) {

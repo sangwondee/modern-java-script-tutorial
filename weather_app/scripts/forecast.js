@@ -1,7 +1,7 @@
 // เอามาจาก website นี้ => https://developer.accuweather.com/user/login?destination=user/me/apps&autologout_timeout=1
 // key ตัวนี้เป็นตัวบอกว่าใครเป็นคนที่จะดึงใช้ api
 // key อันนี้ใช้ส่งได้แค่ 50 ครั้งต่อ app ถ้าหากหมดให้ ลบ app เก่าแล้วสร้างขึ้นมาใหม่
-const key = 'adtbfvEouC4mCAcha6N5VESIvlchO5Vd'
+const key = 'xK3wJbEAAe4O61YOAcdGT2nrHguorKNg'
 
 // getWether
 const getWether = async (id) => {
