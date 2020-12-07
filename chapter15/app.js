@@ -23,3 +23,83 @@
 
 
 // Object Literal
+
+// const userOne = {
+//     username: 'ryu',
+//     email: 'ryu@thenetninja.co.th',
+//     login() {
+//         console.log('the user logged in');
+//     },
+//     logout() {
+//         console.log('the user logged out');
+//     }
+// }
+
+// console.log(userOne.email, userOne.username);
+// userOne.login();
+
+// const userTwo = {
+//     username: 'chun li',
+//     email: 'chun.li@thenetninja.co.th',
+//     login() {
+//         console.log('the user logged in');
+//     },
+//     logout() {
+//         console.log('the user logged out');
+//     }
+// }
+
+// console.log(userTwo.email, userTwo.username);
+// userTwo.login();
+
+
+// const userThree = new User('shaun@thenetninja.co.th', 'shaun');
+
+// Classes
+// *** สำคัญมากกกก ***
+
+// Class เป็นเหมือน blueprint ของ Object นั้นๆ เปรี่ยบเทียบเหมือนรถ (Car blueprint)
+
+// ประกอบไปด้วยสองอย่างคือ Properties และ Functionality
+// Properties -> คือส่วนประกิบของรถ เช่น สี, รูปทรง, ขนาด
+// Functionality ->  คือวิธีการที่มันทำได้ เช่น ขับไปด้านหน้า ,ขับถอยหลัง,เบรก
+
+
+// สามสิ่งที่คำสั่ง new keyword ทำคือ
+// the 'new' keyword
+// 1 - สร้าง object เปล่าๆ ขึ้นมา -> it creates a new empty object {}
+// 2 - ผูกตัวแปล 'this' ให้กับ object เปล่าที่สร้างขึ้นมาใหม่ -> it binds the value of 'this' to the new empty object
+// 3 - ไปเรียก function constructor ขึ้นมาเพื่อสร้าง object -> it calls the constructor function to 'build' the object
+
+// Class ต้องมี construtor เพื่อให้รูปว่า class นั้นๆ มีรูปแบยังไง
+
+class User {
+    constructor(username, email, score) {
+        //set up properties
+        this.username = username
+        this.email = email
+        this.score = 0
+    }
+    login() {
+        console.log(`${this.username} just logged in`)
+        return this
+    }
+    logout() {
+        console.log(`${this.username} just logged out`)
+        return this
+
+    }
+    incScore() {
+        this.score += 1;
+        console.log(`${this.username} has a score of ${this.score}`);
+        return this
+    }
+}
+
+const userOne = new User('mario', 'mario@thenetninja.co.uk')
+const userTwo = new User('luigi', 'luigi@thenetninja.co.uk')
+
+console.log(userOne)
+console.log(userTwo)
+
+userOne.login().incScore().incScore().logout();
