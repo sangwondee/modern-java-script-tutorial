@@ -74,7 +74,7 @@
 // Class ต้องมี construtor เพื่อให้รูปว่า class นั้นๆ มีรูปแบยังไง
 
 class User {
-    constructor(username, email, score) {
+    constructor(username, email) {
         //set up properties
         this.username = username
         this.email = email
@@ -87,7 +87,6 @@ class User {
     logout() {
         console.log(`${this.username} just logged out`)
         return this
-
     }
     incScore() {
         this.score += 1;
@@ -97,13 +96,14 @@ class User {
 }
 
 
-//
+// Class Inheritance
+
+// สามารถใช้งาน class ของ class parent ได้ โดยสามรถใช้ method ต่างๆ ของ parent ได้ ซึ่งถ้าหากไม่มี constructor
+// ก็จะ constructor ของตัวลูกมาแทน
 
 class Admin extends User {
     deleteUser(user) {
-        users = users.filter((u) => {
-            return u.username !== user.username
-        })
+        users = users.filter(u => u.username !== user.username)
     }
 }
 
@@ -113,16 +113,13 @@ const userThree = new Admin('shaun', 'shaun@thenetninja.co.uk');
 
 // console.log(userOne)
 // console.log(userTwo)
-
 // userOne.login().incScore().incScore().logout();
-console.log(userOne,userTwo,userThree);
+console.log(userOne);
+console.log(userTwo)
+console.log(userThree)
 
 let users = [userOne, userTwo, userThree];
-
 console.log(users);
 
-
 userThree.deleteUser(userTwo);
-
-
-
+console.log(users);
