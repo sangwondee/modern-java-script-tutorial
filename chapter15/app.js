@@ -97,11 +97,20 @@ class User {
 
 
 // Class Inheritance
-
 // สามารถใช้งาน class ของ class parent ได้ โดยสามรถใช้ method ต่างๆ ของ parent ได้ ซึ่งถ้าหากไม่มี constructor
 // ก็จะ constructor ของตัวลูกมาแทน
 
+// super() เราต้องใช้คำสั่ง super เพื่อดึกตัวแปลหรือฟังชั่น parent มาใช้งาน
+
+// Constructor ของ Admin Class
+// คือการกำหนดของตัวเองก็จะเรียกใช้ได้แต่ถ้าหากเราต้องการใช้ function ของ parent class
+
 class Admin extends User {
+    constructor(username, email, title) {
+        super(username, email)
+        this.title = title
+    }
+
     deleteUser(user) {
         users = users.filter(u => u.username !== user.username)
     }
@@ -109,17 +118,18 @@ class Admin extends User {
 
 const userOne = new User('mario', 'mario@thenetninja.co.uk')
 const userTwo = new User('luigi', 'luigi@thenetninja.co.uk')
-const userThree = new Admin('shaun', 'shaun@thenetninja.co.uk');
+const userThree = new Admin('shaun', 'shaun@thenetninja.co.uk', 'black-belt-ninja');
 
 // console.log(userOne)
 // console.log(userTwo)
 // userOne.login().incScore().incScore().logout();
-console.log(userOne);
-console.log(userTwo)
-console.log(userThree)
+// console.log(userOne)
+// console.log(userTwo)
+// console.log(userThree)
 
-let users = [userOne, userTwo, userThree];
-console.log(users);
+// let users = [userOne, userTwo, userThree];
+// console.log(users);
 
-userThree.deleteUser(userTwo);
-console.log(users);
+// userThree.deleteUser(userTwo);
+// console.log(users);
+// console.log(userThree.title)
