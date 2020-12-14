@@ -156,3 +156,16 @@
 // const userTwo = new User('luigi', 'luigi@thenetninja.co.uk')
 
 // console.log(userOne, userTwo)
+
+
+// Prototype Method
+//เวลาที่เราสร้าง object มันจะถูกนำเข้าไปใน prototype เพื่อที่จะได้นำไปใช้ในที่อื่นๆ
+// ทุก Object ใน javascript จะมี prototype อยู่
+// protype จะมี method ให้ใช้งาน โดยแต่ละ type ก็จะมี method ที่แต่ต่างกัน
+// เช่น Date prototype ก็จะมี method getDay(), getMonth(), etc...
+// Array prototype ก็จะมี method sort(), filter(), etx...
+
+// การทำงานของ prtotype
+// เวลาเราสร้าง Object มันจะเก็บตัวแปลนั้นๆ เอาไว้ แต่พวก method ต่างๆ มันจะเก็บไว้ใน Prototype
+// console.log(Array.prototype);
+
