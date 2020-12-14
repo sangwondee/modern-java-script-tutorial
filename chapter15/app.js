@@ -157,7 +157,6 @@
 
 // console.log(userOne, userTwo)
 
-
 // Prototype Method
 //เวลาที่เราสร้าง object มันจะถูกนำเข้าไปใน prototype เพื่อที่จะได้นำไปใช้ในที่อื่นๆ
 // ทุก Object ใน javascript จะมี prototype อยู่
@@ -166,6 +165,11 @@
 // Array prototype ก็จะมี method sort(), filter(), etx...
 
 // การทำงานของ prtotype
-// เวลาเราสร้าง Object มันจะเก็บตัวแปลนั้นๆ เอาไว้ แต่พวก method ต่างๆ มันจะเก็บไว้ใน Prototype
+// เวลาเราสร้าง Object มันจะเก็บตัวแปลนั้นๆ เอาไว้แต่พวก method ต่างๆ มันจะเก็บไว้ใน Prototype
+// ตัวอย่างเช่น 
 // console.log(Array.prototype);
+// มันจะไม่เก็บค่า method นั้นๆไว้ในตัวแปลที่เราสร้างขึ้นมา
+
+
+
 
