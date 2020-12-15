@@ -157,7 +157,11 @@
 
 // console.log(userOne, userTwo)
 
-// Prototype Method
+
+
+
+// Prototype Method -> อันนี้สำคัญอยู่นะ
+
 //เวลาที่เราสร้าง object มันจะถูกนำเข้าไปใน prototype เพื่อที่จะได้นำไปใช้ในที่อื่นๆ
 // ทุก Object ใน javascript จะมี prototype อยู่
 // protype จะมี method ให้ใช้งาน โดยแต่ละ type ก็จะมี method ที่แต่ต่างกัน
@@ -166,10 +170,32 @@
 
 // การทำงานของ prtotype
 // เวลาเราสร้าง Object มันจะเก็บตัวแปลนั้นๆ เอาไว้แต่พวก method ต่างๆ มันจะเก็บไว้ใน Prototype
-// ตัวอย่างเช่น 
+// ตัวอย่างเช่น
 // console.log(Array.prototype);
 // มันจะไม่เก็บค่า method นั้นๆไว้ในตัวแปลที่เราสร้างขึ้นมา
 
+function User(username, email) {
+    this.username = username
+    this.email = email
+}
 
+// เราสามารถใส่ function เข้าไปใน prototype ได้โดยการใส่ . เข้าไปใน prototype เพื่อนำไปใช้ในที่อื่นๆได้
+User.prototype.login = function() {
+    console.log(`${this.username} has logged in`)
+    return this;
+}
 
+User.prototype.logout = function() {
+    console.log(`${this.username} has logged out`)
+    return this;
+}
 
+const userOne = new User('mario', 'mario@thenetninja.co.uk')
+const userTwo = new User('luigi', 'luigi@thenetninja.co.uk')
+
+console.log(userOne, userTwo)
+
+// Channing
+// คือการใช้งาน function ต่อๆกัน
+userOne.login().logout()
+//End Prototype Method
