@@ -192,6 +192,7 @@ User.prototype.logout = function() {
 
 const userOne = new User('mario', 'mario@thenetninja.co.uk')
 const userTwo = new User('luigi', 'luigi@thenetninja.co.uk')
+const userThree = new Admin('wichan', 'wichan@thenetninja.co.ul')
 
 console.log(userOne, userTwo)
 
@@ -199,3 +200,14 @@ console.log(userOne, userTwo)
 // คือการใช้งาน function ต่อๆกัน
 userOne.login().logout()
 //End Prototype Method
+
+// Prototype Inheritance
+
+function Admin() {
+    User.call()
+}
+
+
+
+
+// End Prototype Inheritance
