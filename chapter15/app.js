@@ -192,9 +192,11 @@ User.prototype.logout = function() {
 
 const userOne = new User('mario', 'mario@thenetninja.co.uk')
 const userTwo = new User('luigi', 'luigi@thenetninja.co.uk')
-const userThree = new Admin('wichan', 'wichan@thenetninja.co.ul')
 
-console.log(userOne, userTwo)
+// Prototype Inheritance
+const userThree = new Admin('wichan', 'wichan@thenetninja.co.ul', 'black-belt ninja')
+
+console.log(userOne, userTwo, userThree)
 
 // Channing
 // คือการใช้งาน function ต่อๆกัน
@@ -202,12 +204,16 @@ userOne.login().logout()
 //End Prototype Method
 
 // Prototype Inheritance
-
-function Admin() {
-    User.call()
+function Admin(username, email, title) {
+    // call function
+    User.call(this, username, email);
+    this.title = title
 }
 
-
-
+// การ Copy User prototype to Admin Prototype ?
+Admin.prototype = Object.create(User.prototype)
+Admin.prototype.deleteUser = function() {
+    // delete a user
+}
 
 // End Prototype Inheritance
