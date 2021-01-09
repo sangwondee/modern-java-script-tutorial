@@ -4,6 +4,10 @@ const details = document.querySelector('.details');
 const time = document.querySelector('img.time')
 const icon = document.querySelector('.icon img');
 
+const forecast = new Forecast();
+
+// console.log(forecast);
+
 const updateUI = (data) => {
 
     console.log(data);
@@ -51,7 +55,7 @@ cityForm.addEventListener('submit', event => {
     cityForm.reset();
 
     // update the ui with new city
-    updateCity(city).then(data => {
+    forecast.updateCity(city).then(data => {
         updateUI(data);
     }).catch(err => console.log(err));
 });
