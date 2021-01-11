@@ -1,3 +1,6 @@
+const list = document.querySelector('ul');
+const form = document.querySelector('form');
+
 // collection() เป็นการเลือกว่าจะใช้ collection(table) ไหน
 // เป็นการ get ค่ามากจาก database คืนค่าออกมาเป็น promise
 
@@ -11,11 +14,10 @@ db.collection('recipes').get().then(snapshot => {
     console.log(err);
 })
 
-const list = document.querySelector('ul');
 
+// Functions
 const addRecipe = (recipe) => {
     let time = recipe.created_at.toDate();
-
     let html = `
         <li>
             <div>${recipe.title}</div>
@@ -25,3 +27,22 @@ const addRecipe = (recipe) => {
 
     list.innerHTML += html;
 }
+
+form.addEventListener('submit', e => {
+
+    e.preventDefault();
+
+    const now = new Date();
+    const recipe = {
+        title: form.recipe.value,
+        // คือการแปลงค่า timestamp ที่เข้ามาแล้วเปลี่ยนค่าไปเป็น timestamp ของ firebase
+        created_at: firebase.firestore.Timestamp.fromDate(now)
+    };
+
+    // save data to firebase
+    db.collection('recipes').add(recipe).then(() =>{
+        console.log('recipes added');
+    }).catch(err => {
+        console.log(err);
+    })
+});
