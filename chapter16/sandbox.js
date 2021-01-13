@@ -8,7 +8,7 @@ const form = document.querySelector('form');
 // Start here !!!
 db.collection('recipes').get().then(snapshot => {
     snapshot.docs.forEach(doc => {
-        addRecipe(doc.data());
+        addRecipe(doc.data(), doc.id);
     });
 }).catch(err => {
     console.log(err);
@@ -16,12 +16,13 @@ db.collection('recipes').get().then(snapshot => {
 
 
 // Functions
-const addRecipe = (recipe) => {
+const addRecipe = (recipe, id) => {
     let time = recipe.created_at.toDate();
     let html = `
-        <li>
+        <li data-id = "${id}">
             <div>${recipe.title}</div>
             <div>${time}</div>
+            <button class="btn btn-danger btn-sm my-2">delete</button>
         </li>
     `;
 
@@ -45,4 +46,15 @@ form.addEventListener('submit', e => {
     }).catch(err => {
         console.log(err);
     })
+});
+
+// deleteing data
+list.addEventListener('click', e => {
+    if (e.target.tagName === 'BUTTON') {
+        const id = e.target.parentElement.getAttribute('data-id');
+        // เอาไป delte ในดาด้าเบส โดยส่ง id ไป
+        db.collection('recipes').doc(id).delete().then(() =>{
+            console.log('recipe deleted');
+        })
+    }
 });
