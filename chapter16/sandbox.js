@@ -5,17 +5,25 @@ const form = document.querySelector('form');
 // เป็นการ get ค่ามากจาก database คืนค่าออกมาเป็น promise
 
 // snapshort คือ ??? เหมือนเป็นตัว ที่บอกว่าเราทำงานที่ไหนในขนาดนั้น
-// Start here !!!
-db.collection('recipes').get().then(snapshot => {
-    snapshot.docs.forEach(doc => {
-        addRecipe(doc.data(), doc.id);
-    });
-}).catch(err => {
-    console.log(err);
-})
 
+// Start here !!!
+// get document
+// methods onSnapshort จะทำงาน snapshort เป็นช่วงๆ แบบ realtime
+// methods docChanges จะทำงานเมื่อมีการเปลี่ยนแปลงค่าต่าง ๆ โดยตัวมันนั้นจะมี สถานะบอกใน type
+db.collection('recipes').onSnapshot(snapshort => {
+
+    snapshort.docChanges().forEach(change => {
+        const doc = change.doc;
+        if (change.type === 'added') {
+            addRecipe(doc.data(), doc.id);
+        } else if (change.type === 'removed') {
+            deleteRecipe(doc.id);
+        }
+    });
+});
 
 // Functions
+// add Recipe
 const addRecipe = (recipe, id) => {
     let time = recipe.created_at.toDate();
     let html = `
@@ -29,8 +37,19 @@ const addRecipe = (recipe, id) => {
     list.innerHTML += html;
 }
 
-form.addEventListener('submit', e => {
+// Delete Recipe
+const deleteRecipe = (id) => {
+    const recipes = document.querySelectorAll('li');
 
+    recipes.forEach(recipe => {
+        if (recipe.getAttribute('data-id') == id) {
+            recipe.remove();
+        }
+    });
+
+}
+
+form.addEventListener('submit', e => {
     e.preventDefault();
 
     const now = new Date();
