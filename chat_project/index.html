@@ -57,9 +57,32 @@
         </form>
     </div>
 
-<script src="scripts/chat.js"></script>
-<script src="scripts/ui.js"></script>
-<script src="scripts/app.js"></script>
+    <!-- Connect Firebase Database -->
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.6/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.6/firebase-firestore.js"></script>
+    <script>
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    var firebaseConfig = {
+        apiKey: "AIzaSyC7_yhKRlRZQjoeOmfK2u3VHdBicGOLMrg",
+        authDomain: "udemy-modern-javascript-7b76c.firebaseapp.com",
+        databaseURL: "https://udemy-modern-javascript-7b76c-default-rtdb.firebaseio.com",
+        projectId: "udemy-modern-javascript-7b76c",
+        storageBucket: "udemy-modern-javascript-7b76c.appspot.com",
+        messagingSenderId: "662845768014",
+        appId: "1:662845768014:web:b7e14076cd269842ce9e1f",
+        measurementId: "G-F4H7YFSGKK"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+    </script>
+
+    <script src="scripts/chat.js"></script>
+    <script src="scripts/ui.js"></script>
+    <script src="scripts/app.js"></script>
 </body>
 
-</html>
+</script>
