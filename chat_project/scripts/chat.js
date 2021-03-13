@@ -1,9 +1,6 @@
 // adding new chat document
-
 // setting up a real-time listener to get new chats
-
 // updating the username
-
 // updating the room
 
 class Chatroom {
@@ -58,24 +55,3 @@ class Chatroom {
         }
     }
 }
-
-const chatroom = new Chatroom('general', 'shaun');
-
-chatroom.getChats((data) => {
-    console.log(data);
-});
-
-setTimeout(() => {
-    chatroom.updateRoom('gaming');
-    chatroom.updateName('yoshi');
-    chatroom.getChats((data) => {
-        console.log(data);
-    });
-
-    chatroom.addChat('hello');
-}, 3000);
-
-// chatroom.addChat('Hello everyone kub')
-//     .then(() => console.log('chat added'))
-//     .catch(err => console.log(err));
-// console.log(chatroom);
