@@ -1,39 +1,72 @@
+// Symbol คือประเภทข้อมูลพื้นฐานในภาษา JavaScript เราเรียกค่าของข้อมูลประเภทนี้ว่าค่า Symbol หรือออบเจ็ค Symbol
+// ซึ่งวัตถุประสงค์หลักในการใช้งานของมันก็เพื่อใช้เป็น Property ของออบเจ็ค การใช้ Symbol เป็น Property
+// ของออบเจ็คนั้นจะทำให้เราสามารถซ่อน Property ในการเข้าถึงจากภายนอกได้ ยกตัวอย่างเช่น คำสั่ง for in
+// หรือเมธอด Object.getOwnPropertyNames() จะไม่สามารถอ่านค่าได้
+
+const symbolOne = Symbol('a generic name');
+const symbolTwo = Symbol('a generic name');
+
+console.log(symbolOne, symbolTwo, typeof symbolOne);
+console.log(symbolOne == symbolTwo);
+
+
+const ninja = {};
+
+ninja.age = 30;
+ninja['belt'] = 'orange';
+ninja['belt'] = 'black';
+
+
+ninja[symbolOne] = 'ryu';
+ninja[symbolTwo] = 'shaun';
+
+console.log(ninja);
+
+
+
+
+
+
+
+
+
+
 // sets
-const namesArray = ['ryu', 'chun-li', 'ryu', 'shaun'];
+// const namesArray = ['ryu', 'chun-li', 'ryu', 'shaun'];
 
-console.log(namesArray);
+// console.log(namesArray);
 
-// Set เป็นออบเจ็คที่ใช้สำหรับเก็บข้อมูลที่ไม่ซ้ำกัน มันสามารถใช้เก็บได้ทั้งข้อมูลประเภทพื้นฐานและออบเจ็ค (Object reference)
-// const namesSet = new Set(['ryu', 'chun-li', 'ryu', 'shaun']);
-// const namesSet = new Set(namesArray);
-// console.log(namesSet);
+// // Set เป็นออบเจ็คที่ใช้สำหรับเก็บข้อมูลที่ไม่ซ้ำกัน มันสามารถใช้เก็บได้ทั้งข้อมูลประเภทพื้นฐานและออบเจ็ค (Object reference)
+// // const namesSet = new Set(['ryu', 'chun-li', 'ryu', 'shaun']);
+// // const namesSet = new Set(namesArray);
+// // console.log(namesSet);
 
-// const uniqueNames = [...namesSet];
+// // const uniqueNames = [...namesSet];
 
-const uniqueNames = [... new Set(namesArray)];
-// console.log(uniqueNames);
+// const uniqueNames = [... new Set(namesArray)];
+// // console.log(uniqueNames);
 
-const ages = new Set();
+// const ages = new Set();
 
-// ages.add(20);
-// ages.add(25).add(30);
-// ages.add(25);
-// ages.delete(25);
+// // ages.add(20);
+// // ages.add(25).add(30);
+// // ages.add(25);
+// // ages.delete(25);
 
-// console.log(ages, ages.size);
-// console.log(ages.has(30), ages.has(25));
-// ages.clear();
-// console.log(ages);
+// // console.log(ages, ages.size);
+// // console.log(ages.has(30), ages.has(25));
+// // ages.clear();
+// // console.log(ages);
 
-const ninjas = new Set([
-    { name: 'shaun', age:30 },
-    { name: 'crystal', age:29 },
-    { name: 'chun-li', age:32 },
-]);
+// const ninjas = new Set([
+//     { name: 'shaun', age:30 },
+//     { name: 'crystal', age:29 },
+//     { name: 'chun-li', age:32 },
+// ]);
 
-ninjas.forEach(ninja => {
-    console.log(ninja.name);
-});
+// ninjas.forEach(ninja => {
+//     console.log(ninja.name);
+// });
 
 
 
