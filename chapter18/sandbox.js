@@ -3,32 +3,24 @@
 // ของออบเจ็คนั้นจะทำให้เราสามารถซ่อน Property ในการเข้าถึงจากภายนอกได้ ยกตัวอย่างเช่น คำสั่ง for in
 // หรือเมธอด Object.getOwnPropertyNames() จะไม่สามารถอ่านค่าได้
 
-const symbolOne = Symbol('a generic name');
-const symbolTwo = Symbol('a generic name');
+// const symbolOne = Symbol('a generic name');
+// const symbolTwo = Symbol('a generic name');
 
-console.log(symbolOne, symbolTwo, typeof symbolOne);
-console.log(symbolOne == symbolTwo);
-
-
-const ninja = {};
-
-ninja.age = 30;
-ninja['belt'] = 'orange';
-ninja['belt'] = 'black';
+// console.log(symbolOne, symbolTwo, typeof symbolOne);
+// console.log(symbolOne == symbolTwo);
 
 
-ninja[symbolOne] = 'ryu';
-ninja[symbolTwo] = 'shaun';
+// const ninja = {};
 
-console.log(ninja);
-
-
-
+// ninja.age = 30;
+// ninja['belt'] = 'orange';
+// ninja['belt'] = 'black';
 
 
+// ninja[symbolOne] = 'ryu';
+// ninja[symbolTwo] = 'shaun';
 
-
-
+// console.log(ninja);
 
 
 // sets
