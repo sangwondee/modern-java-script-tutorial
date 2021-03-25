@@ -1,11 +1,1 @@
-"use strict";
-
-var greet = function greet(name) {
-  console.log("hello ".concat(name));
-};
-
-greet('mario friday');
-greet('luigi tuesday');
-greet('link monday');
-greet('link sunday');
-greet('link wensday test');
+(()=>{"use strict";console.log("dom file");const e=document.querySelector("body");console.log("index file"),(o=>{const t=document.createElement("h1");t.textContent="test",e.appendChild(t)})(),e.style.background="peachpuff",console.log("mario@thenetnina.co.uk")})();
