@@ -1,1 +1,1 @@
-(()=>{"use strict";console.log("dom file");const e=document.querySelector("body");console.log("index file"),(o=>{const t=document.createElement("h1");t.textContent="test",e.appendChild(t)})(),e.style.background="peachpuff",console.log("mario@thenetnina.co.uk")})();
+(()=>{"use strict";document.querySelector("body");const e=[{name:"mario",premiun:!0},{name:"luigi",premiun:!1},{name:"yoshi",premiun:!0},{name:"toad",premiun:!0},{name:"peach",premiun:!1}],n=(e=>e.filter((e=>e.premiun)))(e);console.log(n),console.log(e)})();
