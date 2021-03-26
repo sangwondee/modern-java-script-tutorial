@@ -5,3 +5,5 @@ const premUsers = getPremUsers(users);
 
 console.log(premUsers);
 console.log(users);
+
+console.log('test2');

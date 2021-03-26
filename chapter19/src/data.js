@@ -1,6 +1,6 @@
 const users = [
-    { name: 'mario', premiun: true },
-    { name: 'luigi', premiun: false },
+    { name: 'mario wichan', premiun: true },
+    { name: 'luigi sangwondee', premiun: false },
     { name: 'yoshi', premiun: true },
     { name: 'toad', premiun: true },
     { name: 'peach', premiun: false }

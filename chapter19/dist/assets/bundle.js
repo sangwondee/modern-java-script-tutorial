@@ -1,1 +1,1 @@
-(()=>{"use strict";document.querySelector("body");const e=[{name:"mario",premiun:!0},{name:"luigi",premiun:!1},{name:"yoshi",premiun:!0},{name:"toad",premiun:!0},{name:"peach",premiun:!1}],n=(e=>e.filter((e=>e.premiun)))(e);console.log(n),console.log(e)})();
+(()=>{"use strict";document.querySelector("body");const e=[{name:"mario wichan",premiun:!0},{name:"luigi sangwondee",premiun:!1},{name:"yoshi",premiun:!0},{name:"toad",premiun:!0},{name:"peach",premiun:!1}],n=(e=>e.filter((e=>e.premiun)))(e);console.log(n),console.log(e)})();

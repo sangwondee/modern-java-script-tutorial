@@ -4,7 +4,8 @@
   "main": "index.js",
   "scripts": {
     "babel": "babel src/index.js -w -o dist/assets/bundle.js",
-    "webpack": "webpack -w"
+    "webpack": "webpack -w",
+    "serve": "webpack-dev-server"
   },
   "author": "",
   "license": "ISC",
@@ -19,11 +20,11 @@
   "dependencies": {
     "atob": "^2.1.2",
     "browserslist": "^4.16.3",
-    "fsevents": "^2.3.2",
     "jsesc": "^2.5.2",
     "json5": "^2.2.0",
     "regjsparser": "^0.6.9",
-    "semver": "^6.3.0"
+    "semver": "^6.3.0",
+    "webpack-dev-server": "^3.11.2"
   },
   "description": ""
 }
